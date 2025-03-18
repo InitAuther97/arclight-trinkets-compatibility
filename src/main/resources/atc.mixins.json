@@ -1,9 +1,9 @@
 {
 	"required": true,
-	"package": "com.example.mixin.client",
+	"package": "io.github.initauther97.arclight.atc.mixin",
 	"compatibilityLevel": "JAVA_21",
-	"client": [
-		"ExampleClientMixin"
+	"mixins": [
+		"DataFixersMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

@@ -1,12 +1,13 @@
-package com.example;
+package io.github.initauther97.arclight.atc;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.loader.api.FabricLoader;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class ExampleMod implements ModInitializer {
-	public static final String MOD_ID = "modid";
+public class ArclightTrinketsComp implements ModInitializer {
+	public static final String MOD_ID = "arclight-trinkets-compatibility";
 
 	// This logger is used to write text to the console and the log file.
 	// It is considered best practice to use your mod id as the logger's name.
@@ -19,6 +20,8 @@ public class ExampleMod implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 
-		LOGGER.info("Hello Fabric world!");
+		LOGGER.info("Arclight Trinkets compatibility initialized, provided by InitAuther97");
+		var version = FabricLoader.getInstance().getModContainer("trinkets").get().getMetadata().getVersion();
+		LOGGER.info("atc v0.1.0, trinkets {}", version);
 	}
 }
