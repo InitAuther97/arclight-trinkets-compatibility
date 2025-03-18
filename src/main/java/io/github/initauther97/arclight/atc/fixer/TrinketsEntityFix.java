@@ -20,7 +20,6 @@ public class TrinketsEntityFix extends DataFix {
     }
 
     public Typed<?> createDummyList(Typed<?> raw) {
-        System.out.println("Applying TrinketsEntityFix");
         var listType = DSL.optional(DSL.field("cardinal_components", DSL.optional(DSL.field("trinkets:trinkets", DSL.optional(DSL.compoundList(DSL.optional(DSL.compoundList(DSL.optional(DSL.field("Items", getOutputSchema().getType(References.ITEM_STACK)))))))))));
         var list = listType.pointTyped(raw.getOps());
         if (list.isEmpty()) {
